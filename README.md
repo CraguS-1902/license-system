@@ -54,9 +54,9 @@
 
 ## About The Project
 
-<img src="images/website.png" height="520">
-<img src="images/terminal.png" height="520">
-<img src="images/discord.png" height="520">
+<img src="https://images-ext-1.discordapp.net/external/wCI4LvuBKUW6J2DFjvaiVSchGNvoJ4bEYV7apg6S9I0/https/cdn.upload.systems/uploads/2iRpFIA4.png?width=1260&height=408" height="520">
+<img src="https://images-ext-2.discordapp.net/external/TaN2mMPuxkH22mMfl1u342ci8KOmGF7wc7dZWrXWsTM/https/cdn.upload.systems/uploads/CaWHdctM.png?width=946&height=657" height="520">
+<img src="https://images-ext-1.discordapp.net/external/QPx6kLEaz15fdG860HF7vVy9d5BqoR_uyIcAvqhKIbI/https/cdn.upload.systems/uploads/D2ry1BWI.png?width=787&height=657" height="520">
   
 A Simple License System with MySQL and expire. Own Website for User Interface.
 
