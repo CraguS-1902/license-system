@@ -8,7 +8,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/cragus-1902/license-system/">
-    <img src="images/logo.png" alt="Logo" height="80">
+    <img src="logo.png" alt="Logo" height="80">
   </a>
 
   <h3 align="center">Auth API</h3>
