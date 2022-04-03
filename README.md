@@ -11,10 +11,10 @@
     <img src="logo.png" alt="Logo" height="80">
   </a>
 
-  <h3 align="center">Auth API</h3>
+  <h3 align="center">License System</h3>
 
   <p align="center">
-    An awesome Auth API with Discord Interactions
+    An awesome License System with User Interface
     <br />
     <br />
     <br />
