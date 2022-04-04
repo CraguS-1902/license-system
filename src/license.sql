@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 03. Apr 2022 um 21:45
+-- Erstellungszeit: 04. Apr 2022 um 14:23
 -- Server-Version: 10.4.22-MariaDB
 -- PHP-Version: 8.1.1
 
@@ -34,6 +34,13 @@ CREATE TABLE `licenses` (
   `claimed` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Daten für Tabelle `licenses`
+--
+
+INSERT INTO `licenses` (`ID`, `license`, `days`, `claimed`) VALUES
+(43, 'SOWSO-E0RR3-T9CYF-RQTXH', '10', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -51,7 +58,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`ID`, `title`, `login_key`) VALUES
-(1, 'License System', 'YourPassword');
+(1, 'License System', '1');
 
 -- --------------------------------------------------------
 
@@ -66,8 +73,17 @@ CREATE TABLE `users` (
   `expire` varchar(10) NOT NULL,
   `rank` text NOT NULL DEFAULT 'user',
   `ip` text NOT NULL,
-  `hwid` text NOT NULL
+  `hwid` text NOT NULL,
+  `banned` tinyint(1) NOT NULL,
+  `vip` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `users`
+--
+
+INSERT INTO `users` (`ID`, `name`, `password`, `expire`, `rank`, `ip`, `hwid`, `banned`, `vip`) VALUES
+(12, 'CraguS', '0cbc6611f5540bd0809a388dc95a615b', '14/04/2022', 'user', '95.90.203.15', '8C5FF916-34C3-11EC-AC7F-B188A7044C05', 1, 1);
 
 --
 -- Indizes der exportierten Tabellen
@@ -100,7 +116,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT für Tabelle `licenses`
 --
 ALTER TABLE `licenses`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT für Tabelle `settings`
@@ -112,7 +128,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
