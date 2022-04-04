@@ -47,26 +47,47 @@ rank = "N/A"
 
 ip = "N/A"
 
-def getExpiry():
-    seconds = expire_int
-    seconds_in_day = 60 * 60 * 24
-    return seconds // seconds_in_day
+class User():
+    def getExpiry():
+        seconds = expire_int
+        seconds_in_day = 60 * 60 * 24
+        return seconds // seconds_in_day
 
-def getRank():
-    global rank
-    return rank
+    def getRank():
+        global rank
+        return rank
 
-def getIP():
-    global ip
-    return ip
+    def getIP():
+        global ip
+        return ip
 
-def getID():
-    global id
-    return id
+    def getID():
+        global id
+        return id
 
-def getHwid():
-    global hwid
-    return hwid 
+    def getHwid():
+        global hwid
+        return hwid 
+
+    def isBanned():
+        global banned_id
+        if banned_id == 1:
+            return True
+        else:
+            return False
+
+    def isVIP():
+        global vip_id
+        if vip_id == 1:
+            return True
+        else:
+            return False  
+
+    def getName():
+        global name
+        return name
+    
+
 
 def loginUser(user, password):
     global expire_int
@@ -74,6 +95,9 @@ def loginUser(user, password):
     global ip
     global id
     global rank
+    global banned_id
+    global vip_id
+    global name
     cur = connect.db.cursor()
     cur.execute("SELECT * FROM users WHERE name = '" + user +"'")
     key = cur.fetchall()
@@ -82,9 +106,7 @@ def loginUser(user, password):
     if not cur.rowcount:
         print("Username doesnt exist.")
         time.sleep(3)
-        sys.exit(
-
-        )
+        sys.exit()
     for x in key:
         pwa = x[2]
         expire = x[3]
@@ -92,11 +114,18 @@ def loginUser(user, password):
         rank = x[4]
         ip = x[5]
         id = x[0]
+        banned_id = x[7]
+        vip_id = x[8]
+        name = x[1]
 
+    name = name
+    vip_id = vip_id
+    banned_id = banned_id
     id = id
     ip = ip
     hwid = hwid
     rank = rank
+
     ip = get('https://api.ipify.org').content.decode('utf8')
     cur.execute("UPDATE users SET ip = '" + ip + "' WHERE name = '" + str(user) + "'")
     date = datetime.strptime(expire, "%d/%m/%Y") + timedelta(hours=1)
